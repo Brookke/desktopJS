@@ -9,7 +9,7 @@
             "url": "https://json.schemastore.org/openfin"
         },
         {
-            "fileMatch": [ "tsconfig-staging.json" ],
+            "fileMatch": [ "tsconfig.staging.json" ],
             "url": "https://json.schemastore.org/tsconfig"
         }
     ]
