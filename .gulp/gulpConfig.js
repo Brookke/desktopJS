@@ -14,7 +14,7 @@ module.exports = {
             threshold: 80
         }
     },
-    tslint: '../../tslint.json',
+    eslint: '../../.eslintrc',
     documentation: {
         src: ['packages/**/src/**/*.ts', '!**/*.d.ts' , '!**/node_modules/**/*'],
         out: 'docs/'
