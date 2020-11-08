@@ -70,7 +70,7 @@ export function resolveContainer(param1?: boolean | any, param2?: any): Containe
     }
     let registration: ContainerRegistration, containerId: string;
     try {
-        for (let i: number = 0; i < registeredContainers.length; i++) { // tslint:disable-line
+        for (let i = 0; i < registeredContainers.length; i++) { // tslint:disable-line
             containerId = registeredContainers[i].id;
             const testReg: ContainerRegistration = registeredContainers[i].registration;
             registration = testReg.condition(options) ? testReg : registration;

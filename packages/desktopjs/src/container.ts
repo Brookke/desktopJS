@@ -205,7 +205,7 @@ export abstract class ContainerBase extends Container {
         }
     }
 
-    protected abstract closeAllWindows(excludeSelf?: Boolean): Promise<void>;
+    protected abstract closeAllWindows(excludeSelf?: boolean): Promise<void>;
 
     public loadLayout(layout: string | PersistedWindowLayout): Promise<PersistedWindowLayout> {
         return new Promise<PersistedWindowLayout>((resolve, reject) => {

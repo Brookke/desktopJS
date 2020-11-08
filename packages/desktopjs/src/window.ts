@@ -405,9 +405,9 @@ export class GroupWindowManager {
 
 export class SnapAssistWindowManager extends GroupWindowManager {
     private readonly floater: ContainerWindow;
-    public autoGrouping: boolean = true;
-    public snapThreshold: number = 15;
-    public snapOffset: number = 15;
+    public autoGrouping = true;
+    public snapThreshold = 15;
+    public snapOffset = 15;
     private snappingWindow: string;
     protected readonly targetGroup: Map<string, ContainerWindow> = new Map();
 

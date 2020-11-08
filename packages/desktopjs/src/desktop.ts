@@ -18,4 +18,4 @@ export * from "./window";
 export * from "./shortcut";
 export * from "./Default/default";
 
-export const version: string = "PACKAGE_VERSION";
+export const version = "PACKAGE_VERSION";

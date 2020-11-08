@@ -8,7 +8,7 @@ describe("registry", () => {
         let mockContainer: jasmine.SpyObj<Container>;
 
         // tslint:disable-next-line: mocha-no-side-effect-code
-        const setUpContainer = (registration?: registry.ContainerRegistration, id: string = "Test", hostType: string = "Test") => {
+        const setUpContainer = (registration?: registry.ContainerRegistration, id = "Test", hostType = "Test") => {
             mockContainer = jasmine.createSpyObj<Container>("Container", ["createWindow"]);
             mockContainer.hostType = hostType;
 
@@ -65,8 +65,8 @@ describe("registry", () => {
 
         it ("resolveContainer passes options", () => {
             const providedOptions = {};
-            let condition: boolean = false;
-            let create: boolean = false;
+            let condition = false;
+            let create = false;
 
             registry.registerContainer("TestContainer",
             {
@@ -84,7 +84,7 @@ describe("registry", () => {
         });
 
         it ("resolveContainer resolves in order", () => {
-            const hostType: string = "AnotherContainer";
+            const hostType = "AnotherContainer";
             let mockContainer2;
             setUpContainer({ condition: () => true, create: () => mockContainer });
             registry.registerContainer("Test", { condition: () => true, create: () => {
