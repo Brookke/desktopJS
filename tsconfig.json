@@ -13,6 +13,10 @@
         "lib": [
             "es2016",
             "dom"
-        ]
+        ],
+        "baseUrl": "packages",
+        "paths": {
+            "@morgan-stanley/desktopjs": ["desktopjs/src"]
+        }
     }
 }
