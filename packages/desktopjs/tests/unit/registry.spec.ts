@@ -41,10 +41,9 @@ describe("registry", () => {
             expect(container.hostType).toEqual("Default");
         });
 
-        // tslint:disable-next-line: mocha-no-side-effect-code
         it("Subsequent call returns from cache", () => {
             const container: Container = registry.resolveContainer(true);
-            spyOn(registry, "container").and.returnValue(container);
+            (registry as any).container = container;
             const container2: Container = registry.resolveContainer(); // Specifically testing cached value
             expect(container2).toBeDefined();
             expect(container2.uuid).toEqual(container.uuid);

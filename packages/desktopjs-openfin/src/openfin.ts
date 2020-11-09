@@ -325,7 +325,7 @@ export class OpenFinContainer extends WebContainerBase {
      * @type {boolean}
      * @default true
      */
-    public static replaceNotificationApi: boolean = true;
+    public static replaceNotificationApi = true;
 
     public static readonly windowOptionsMap: PropertyMap = {
         x: { target: "defaultLeft" },
@@ -346,7 +346,7 @@ export class OpenFinContainer extends WebContainerBase {
     public notificationOptionsMap: PropertyMap = OpenFinContainer.notificationOptionsMap;
 
     /* tslint:disable */
-    public static menuHtml: string =
+    public static menuHtml =
         `<html>
         <head>
             <style>
@@ -395,7 +395,7 @@ export class OpenFinContainer extends WebContainerBase {
                         window.close();
                     }
                 }, false);
-            <\/script>
+            </script>
         </head>
         <body>
             <ul class="context-menu" id="contextMenu"></ul>
@@ -445,7 +445,8 @@ export class OpenFinContainer extends WebContainerBase {
     protected registerNotificationsApi() {
         if (typeof this.globalWindow !== "undefined" && this.globalWindow) {
             // Define owningContainer for closure to inner class
-            const owningContainer: OpenFinContainer = this; // tslint:disable-line
+            // eslint-disable-next-line @typescript-eslint/no-this-alias
+            const owningContainer: OpenFinContainer = this;
 
             this.globalWindow["Notification"] = class OpenFinNotification extends ContainerNotification {
                 constructor(title: string, options?: NotificationOptions) {
@@ -551,7 +552,7 @@ export class OpenFinContainer extends WebContainerBase {
             : "<span>&nbsp;</span>";
 
         return `<li class="context-menu-item" onclick="fin.desktop.InterApplicationBus.send('${(<any>this.desktop.Application.getCurrent()).uuid}`
-            + `', null, 'TrayIcon_ContextMenuClick_${this.uuid}', { id: '${item.id}' });this.close()\">${imgHtml}${item.label}</li>`;
+            + `', null, 'TrayIcon_ContextMenuClick_${this.uuid}', { id: '${item.id}' });this.close()">${imgHtml}${item.label}</li>`;
     }
 
     private showMenu(x: number, y: number, monitorInfo: any, menuItems: MenuItem[]) {
@@ -578,7 +579,7 @@ export class OpenFinContainer extends WebContainerBase {
                 win.document.write(this.getMenuHtml());
                 win.document.close();
 
-                let menuItemHtml: string = "";
+                let menuItemHtml = "";
                 for (const item of menuItems.filter(value => value.label)) {
                     if (!item.id) {
                         item.id = Guid.newGuid();
@@ -673,6 +674,7 @@ export class OpenFinContainer extends WebContainerBase {
     public buildLayout(): Promise<PersistedWindowLayout> {
         const layout = new PersistedWindowLayout();
 
+        // eslint-disable-next-line no-async-promise-executor
         return new Promise<PersistedWindowLayout>(async (resolve, reject) => {
             const windows = await this.getAllWindows();
             const mainWindow = this.getMainWindow();
@@ -680,6 +682,7 @@ export class OpenFinContainer extends WebContainerBase {
 
             windows.filter(window => window.name !== "queueCounter" && !window.name.startsWith(OpenFinContainer.notificationGuid))
                 .forEach(djsWindow => {
+                    // eslint-disable-next-line no-async-promise-executor
                     promises.push(new Promise<void>(async (innerResolve, innerReject) => {
                         const state = await djsWindow.getState();
                         const window = djsWindow.innerWindow;
