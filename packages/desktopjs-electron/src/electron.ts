@@ -405,7 +405,7 @@ export class ElectronContainer extends WebContainerBase {
                 constructor(title: string, options?: NotificationOptions) {
                     super(title, options);
                     options["notification"] = this;
-                    owningContainer.showNotification(title, options);
+                    owningContainer.showNotification(this.title, this.options);
                 }
             };
         }

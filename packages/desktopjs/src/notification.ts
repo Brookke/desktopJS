@@ -49,6 +49,5 @@ export abstract class ContainerNotification {
      * @param {string} title Defines a title for the notification.  Depending on container and choice of notification mechanism, this might not be shown.
      * @param {NotificationOptions} [options] Notification options.
      */
-    constructor(title: string, options?: NotificationOptions) { 
-    }
+    constructor(protected title: string, protected options?: NotificationOptions) {}
 }

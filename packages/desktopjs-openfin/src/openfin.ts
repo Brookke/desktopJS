@@ -456,7 +456,7 @@ export class OpenFinContainer extends WebContainerBase {
                     options["onClick"] = (event) => { if (this.onclick) { this.onclick(event); } };
                     options["onError"] = (event) => { if (this.onerror) { this.onerror(event); } };
 
-                    owningContainer.showNotification(title, options);
+                    owningContainer.showNotification(this.title, this.options);
                 }
             };
         }
