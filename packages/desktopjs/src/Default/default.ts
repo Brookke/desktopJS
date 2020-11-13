@@ -355,7 +355,7 @@ export namespace Default {
                 if (permission === "denied") {
                     console.warn("Notifications not permitted");
                 } else if (permission === "granted") {
-                    new (<any>this.globalWindow).Notification(title, options); // tslint:disable-line
+                    new (<any>this.globalWindow).Notification(title, options); 
                 }
             });
         }

@@ -1,19 +1,16 @@
 import {} from "jasmine";
 import * as registry from "../../src/registry";
 import { Container } from "../../src/container";
-import { Default } from "../../src/Default/default";
 
 describe("registry", () => {
     describe("resolveContainer", () => {
         let mockContainer: jasmine.SpyObj<Container>;
-
-        // tslint:disable-next-line: mocha-no-side-effect-code
         const setUpContainer = (registration?: registry.ContainerRegistration, id = "Test", hostType = "Test") => {
             mockContainer = jasmine.createSpyObj<Container>("Container", ["createWindow"]);
             mockContainer.hostType = hostType;
 
             registration = registration || {
-                condition: (options?: any): boolean => true,
+                condition: (_options?: any): boolean => true,
                 create: (): Container => mockContainer
             };
             registry.registerContainer(id, registration );
@@ -70,7 +67,7 @@ describe("registry", () => {
             registry.registerContainer("TestContainer",
             {
                 condition: (options) => { 
-                    console.log('condition', (options === providedOptions)); // tslint:disable-line
+                    console.log('condition', (options === providedOptions)); 
                     return condition = (options === providedOptions);
                 },
                 create: (options) => { create = (options === providedOptions); return mockContainer; }

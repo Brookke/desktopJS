@@ -2,8 +2,6 @@
  * @preferred
  * @module @morgan-stanley/desktopjs
  */
-
- /* tslint:disable */
 export * from "./container";
 export * from "./events";
 export * from "./guid";

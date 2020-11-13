@@ -9,7 +9,7 @@ import { EventArgs, EventEmitter } from "../../src/events";
 class MockContainer extends ContainerBase {
 }
 
-export class MockMessageBus implements MessageBus { // tslint:disable-line
+export class MockMessageBus implements MessageBus { 
     private listener: any;
 
     subscribe<T>(topic: string, listener: (event: any, message: T) => void, options?: MessageBusOptions): Promise<MessageBusSubscription> {

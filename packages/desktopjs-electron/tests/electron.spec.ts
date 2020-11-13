@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import {} from "jasmine";
 import { ElectronContainer, ElectronContainerWindow, ElectronMessageBus, ElectronWindowManager } from "../src/electron";
 import { ContainerWindow, Container } from "@morgan-stanley/desktopjs";
 

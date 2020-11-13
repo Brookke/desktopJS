@@ -345,7 +345,6 @@ export class OpenFinContainer extends WebContainerBase {
 
     public notificationOptionsMap: PropertyMap = OpenFinContainer.notificationOptionsMap;
 
-    /* tslint:disable */
     public static menuHtml =
         `<html>
         <head>
@@ -401,7 +400,6 @@ export class OpenFinContainer extends WebContainerBase {
             <ul class="context-menu" id="contextMenu"></ul>
         </body>
     </html>`;
-    /* tslint:enable */
 
     public constructor(desktop?: any, win?: Window, options?: any) {
         super(win);
@@ -468,7 +466,7 @@ export class OpenFinContainer extends WebContainerBase {
         return new Promise<string | undefined>((resolve, reject) => {
             this.desktop.System.getRvmInfo(rvmInfo => {
                 this.desktop.System.getRuntimeInfo(runtimeInfo => {
-                    console.log(runtimeInfo); // tslint:disable-line
+                    console.log(runtimeInfo); 
                     resolve(`RVM/${rvmInfo.version} Runtime/${runtimeInfo.version}`);
                 }, reject);
             }, reject);
@@ -589,7 +587,7 @@ export class OpenFinContainer extends WebContainerBase {
                 }
 
                 const contextMenuElement: HTMLElement = win.document.getElementById("contextMenu");
-                contextMenuElement.innerHTML = menuItemHtml; // tslint:disable-line
+                contextMenuElement.innerHTML = menuItemHtml; 
 
                 // Size <ul> to fit
                 const { "offsetWidth": width, "offsetHeight": height } = contextMenuElement;
