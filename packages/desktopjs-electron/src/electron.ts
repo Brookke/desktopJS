@@ -372,6 +372,7 @@ export class ElectronContainer extends WebContainerBase {
                 });
             }
         } catch (e) {
+            // eslint-disable-next-line no-console
             console.error(e);
         }
 

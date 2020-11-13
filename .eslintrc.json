@@ -11,7 +11,8 @@
         "project": "./tsconfig.json" 
     },
     "rules": {
-      "@typescript-eslint/no-inferrable-types": [true, { "ignoreProperties": true, "ignoreParameters": true}]
+      "@typescript-eslint/no-inferrable-types": ["error", { "ignoreProperties": true, "ignoreParameters": true}],
+      "no-console": "error"
     }
     
 }

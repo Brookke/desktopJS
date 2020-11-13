@@ -77,6 +77,7 @@ export function resolveContainer(param1?: boolean | any, param2?: any): Containe
         }
         container = registration ? registration.create(options) : undefined;
     } catch (e) {
+        // eslint-disable-next-line no-console
         console.error(`Error resolving container '${containerId}' : ${e.toString()}`);
     } finally {
         container = container || new Default.DefaultContainer();

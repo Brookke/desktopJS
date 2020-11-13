@@ -29,6 +29,7 @@ export namespace ObjectTransform {
                         newOptions[prop] = object[prop];
                     }
                 } catch (e) {
+                    // eslint-disable-next-line no-console
                     console.error("Error transforming property '" + prop + "'");
                 }
             }

@@ -347,13 +347,13 @@ export namespace Default {
 
         public showNotification(title: string, options?: NotificationOptions) {
             if (!("Notification" in this.globalWindow)) {
-                console.warn("Notifications not supported");
+                this.log("warn", "Notifications not supported");
                 return;
             }
 
             (<any>this.globalWindow).Notification.requestPermission(permission => {
                 if (permission === "denied") {
-                    console.warn("Notifications not permitted");
+                    this.log("warn", "Notifications not permitted");
                 } else if (permission === "granted") {
                     new (<any>this.globalWindow).Notification(title, options); 
                 }

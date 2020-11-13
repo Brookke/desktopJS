@@ -432,7 +432,7 @@ export class OpenFinContainer extends WebContainerBase {
         if (this.desktop.GlobalHotkey) {
             this.globalShortcut = new OpenFinGlobalShortcutManager(this.desktop);
         } else {
-            console.warn("Global shortcuts require minimum OpenFin runtime of 9.61.32.34");
+            this.log("warn", "Global shortcuts require minimum OpenFin runtime of 9.61.32.34");
         }
     }
 
@@ -466,7 +466,7 @@ export class OpenFinContainer extends WebContainerBase {
         return new Promise<string | undefined>((resolve, reject) => {
             this.desktop.System.getRvmInfo(rvmInfo => {
                 this.desktop.System.getRuntimeInfo(runtimeInfo => {
-                    console.log(runtimeInfo); 
+                    this.log("info",runtimeInfo); 
                     resolve(`RVM/${rvmInfo.version} Runtime/${runtimeInfo.version}`);
                 }, reject);
             }, reject);
@@ -629,7 +629,7 @@ export class OpenFinContainer extends WebContainerBase {
                         }
                     });
 
-            }, (error) => { console.error(error); });
+            }, (error) => { this.log("error", error); });
     }
 
     protected closeAllWindows(): Promise<void> {
