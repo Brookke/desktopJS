@@ -325,7 +325,7 @@ export class OpenFinContainer extends WebContainerBase {
      * @type {boolean}
      * @default true
      */
-    public static replaceNotificationApi = true;
+    public static replaceNotificationApi: boolean = true;
 
     public static readonly windowOptionsMap: PropertyMap = {
         x: { target: "defaultLeft" },

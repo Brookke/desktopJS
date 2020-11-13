@@ -309,7 +309,7 @@ export class ElectronMessageBus implements MessageBus {
  * @extends ContainerBase
  */
 export class ElectronContainer extends WebContainerBase {
-    protected isRemote = true;
+    protected isRemote: boolean = true;
     protected electron: any;
     protected app: any;
     public browserWindow: any;
@@ -324,7 +324,7 @@ export class ElectronContainer extends WebContainerBase {
      * @type {boolean}
      * @default true
      */
-    public static replaceNotificationApi = true;
+    public static replaceNotificationApi: boolean = true;
 
     public static readonly windowOptionsMap: PropertyMap = {
         taskbar: { target: "skipTaskbar", convert: (value: any, from: any, to: any) => { return !value; } },
