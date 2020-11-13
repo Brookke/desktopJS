@@ -938,10 +938,10 @@ describe("OpenfinGlobalShortcutManager", () => {
 
     it ("Unavailable in OpenFin is unavailable on container", () => {
         delete desktop.GlobalHotkey;
-        spyOn(console, "warn").and.stub();
+        spyOn(OpenFinContainer.prototype, "log").and.stub();
         const container = new OpenFinContainer(desktop);
         expect(container.globalShortcut).toBeUndefined();
-        expect(console.warn).toHaveBeenCalledWith("Global shortcuts require minimum OpenFin runtime of 9.61.32.34");
+        expect(OpenFinContainer.prototype.log).toHaveBeenCalledWith("warn","Global shortcuts require minimum OpenFin runtime of 9.61.32.34");
     });  
 
     describe("invokes underlying OpenFin", () => {
