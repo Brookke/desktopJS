@@ -72,7 +72,7 @@ export class TestContainer extends ContainerBase {
         };
     }
 
-    public closeAllWindows(excludeSelf?: Boolean): Promise<void> {
+    public closeAllWindows(excludeSelf?: boolean): Promise<void> {
         return Promise.resolve();
     }
 
