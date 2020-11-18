@@ -7,9 +7,6 @@
       "eslint:recommended",
       "plugin:@typescript-eslint/recommended"
     ],
-    "parserOptions": {
-        "project": "./tsconfig.json" 
-    },
     "rules": {
       "@typescript-eslint/no-inferrable-types": ["error", { "ignoreProperties": true, "ignoreParameters": true}],
       "no-console": "error"
