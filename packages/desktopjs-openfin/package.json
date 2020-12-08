@@ -26,7 +26,6 @@
   ],
   "scripts": {
     "clean": "gulp clean",
-    "eslint": "gulp eslint",
     "build:lerna": "gulp build:lerna",
     "build": "gulp build",
     "test": "gulp test",

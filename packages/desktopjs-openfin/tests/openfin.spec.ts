@@ -617,7 +617,7 @@ describe("OpenFinContainer", () => {
 
     describe("createWindow", () => {
         beforeEach(() => {
-            spyOn(desktop, "Window").and.callFake((options?: any, callback?: Function) => { if (callback) { callback(); } });
+            spyOn(desktop, "Window").and.callFake((options?: any, callback?: () => void) => { if (callback) { callback(); } });
         });
 
         it("defaults", (done) => {

@@ -375,7 +375,7 @@ describe("DefaultContainer", () => {
         it("showNotification warns about not being permitted", () => {
             const window = {
                 Notification: {
-                    requestPermission(callback: (permission: string) => {}) { callback("denied"); }
+                    requestPermission(callback: (permission: string) => void) { callback("denied"); }
                 }
             };
 
