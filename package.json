@@ -7,8 +7,8 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "postinstall": "npm run bootstrap",
-    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet",
-    "lint:fix": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet && prettier --check '*/**/*.{json,css,scss,html,md}'",
+    "lint:fix": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix && prettier --write '*/**/*.{json,css,scss,html,md}'",
     "clean": "lerna run clean",
     "build": "lerna run build:lerna",
     "test": "gulp test",
@@ -26,6 +26,8 @@
     "codecov": "^3.7.0",
     "dts-bundle": "^0.7.3",
     "eslint": "^7.13.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-prettier": "^3.3.0",
     "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",
     "gulp-connect": "^5.7.0",
@@ -59,6 +61,9 @@
   "lint-staged": {
     "*.{js,ts,tsx}": [
       "eslint --fix"
+    ],
+    "*.{json,css,scss,html,md}": [
+      "prettier --write"
     ]
   }
 }
