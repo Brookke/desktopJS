@@ -42,6 +42,7 @@
     "lerna": "^3.22.0",
     "lint-staged": "^10.5.1",
     "merge2": "^1.4.1",
+    "prettier": "^2.2.1",
     "remap-istanbul": "^0.13.0",
     "rollup": "^2.13.0",
     "rollup-plugin-sourcemaps": "^0.6.2",
