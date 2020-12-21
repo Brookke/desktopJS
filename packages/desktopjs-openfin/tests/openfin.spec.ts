@@ -514,7 +514,7 @@ describe("OpenFinContainer", () => {
     });
 
     it ("getInfo invokes underlying getRvmInfo and getRuntimeInfo", (done) => {
-        const system = jasmine.createSpyObj("system", ["getRvmInfo", "getRuntimeInfo"]);
+        const system = jasmine.createSpyObj("system", ["getRvmInfo", "getRuntimeInfo", "log"]);
         system.getRvmInfo.and.callFake(f => f({ version: "1" }));
         system.getRuntimeInfo.and.callFake(f => f({ version: "2" }));
         Object.defineProperty(desktop, "System", { value: system });
